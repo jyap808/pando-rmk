@@ -1,6 +1,6 @@
 # pando-rmk
 
-RMK firmware for the [**Pando**](https://github.com/jyap808/pando) split keyboard (STM32G0B1KB).
+[RMK](https://rmk.rs/) firmware for the [**Pando**](https://github.com/jyap808/pando) split keyboard (STM32G0B1KB).
 
 ![Pando case](assets/case-photo.jpg)
 
