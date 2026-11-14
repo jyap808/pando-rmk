@@ -1,0 +1,7 @@
+# Copyright 2026 Julian Yap (@jyap808)
+# SPDX-License-Identifier: GPL-2.0-or-later
+
+[toolchain]
+channel = "stable"
+components = ["rust-src"]
+targets = ["thumbv6m-none-eabi"]

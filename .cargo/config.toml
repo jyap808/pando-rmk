@@ -1,0 +1,15 @@
+# Copyright 2026 Julian Yap (@jyap808)
+# SPDX-License-Identifier: GPL-2.0-or-later
+
+[build]
+target = "thumbv6m-none-eabi"
+
+[target.thumbv6m-none-eabi]
+# `scripts/flash.sh` objcopies the ELF to a raw binary and flashes it with
+# dfu-util. dfu-util must not be handed the ELF: it would treat it as a raw
+# image.
+runner = "./scripts/flash.sh"
+rustflags = ["-C", "link-arg=-Tlink.x", "-C", "link-arg=--nmagic"]
+
+[env]
+KEYBOARD_TOML_PATH = { value = "keyboard.toml", relative = true }

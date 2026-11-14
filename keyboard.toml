@@ -1,0 +1,6 @@
+# Copyright 2026 Julian Yap (@jyap808)
+# SPDX-License-Identifier: GPL-2.0-or-later
+
+[rmk]
+# Pando's QMK build uses the default 5 ms debounce.
+debounce_time = 5
