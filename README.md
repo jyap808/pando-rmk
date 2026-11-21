@@ -53,9 +53,10 @@ cargo build --release
 The binary is at
 `target/thumbv6m-none-eabi/release/pando-rmk`.
 
-`memory.x` reserves the top 8 KiB of the 128 KiB flash for RMK storage
-(2 x 2 KiB sectors plus headroom), so the linker keeps firmware below
-`0x0801E000`. The current image is well under that.
+`memory.x` reserves the top 12 KiB of the 128 KiB flash for RMK storage
+(6 x 2 KiB sectors), so the linker keeps firmware below `0x0801D000`. A
+5x12x8 keymap is 480 individual storage items; the 2-sector default is too
+small for it and would leave keymap edits unsaved.
 
 ## Flash
 

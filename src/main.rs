@@ -131,9 +131,14 @@ async fn main(_spawner: Spawner) {
         ..Default::default()
     };
 
-    // Keymap and settings live in the top sectors of flash.
+    // Keymap and settings live in the top sectors of flash. The default two
+    // sectors (4 KiB) cannot hold a 5x12x8 keymap: RMK writes one item per
+    // key (480), plus behavior/layout config, which needs well over 4 KiB.
     let flash = async_flash_wrapper(Flash::new_blocking(p.FLASH));
-    let storage_config = StorageConfig::default();
+    let storage_config = StorageConfig {
+        num_sectors: 6,
+        ..Default::default()
+    };
 
     let mut keymap_data = KeymapData::new(keymap::get_default_keymap());
     let mut behavior_config = BehaviorConfig::default();
